@@ -1,0 +1,61 @@
+@charset "utf-8";
+
+/*commer css*/
+.mt-15 {
+	margin-top: 15px !important;
+}
+.view-wrapper {
+	padding: 0 15px;
+}
+.login-box {
+	text-align: center;
+	padding: 40px 0 30px;
+}
+.input-row input {
+	width: 100%;
+	font-size: 15px;
+	padding: 15px 0;
+	border-radius: 0;
+	border-bottom: 1px solid #e5e5e5;
+}
+.login-btn,
+.registrated-btn {
+	width: 100%;
+	display: block;
+	font-size: 15px;
+	padding: 15px 0;
+	border-radius: 5px;
+	color: #fff;
+	background: #e22c3a;
+}
+.registrated-btn {
+	color: #e22c3a;
+	text-align: center;
+	background: none;
+	border: 1px solid #e22c3a;
+}
+
+/*login*/
+.sumbit-box {
+	padding-top: 15px;
+}
+
+/*msg star*/
+.pop-msg-wrapper {
+	position: fixed;
+	left: 50%;
+	top: 40%;
+	-webkit-transform: translate(-50%, -70%);
+    -moz-transform: translate(-50%, -70%);
+    -o-transform: translate(-50%, -70%);
+    transform: translate(-50%, -70%);
+	z-index: 1000000;
+}
+.msg-content {
+	color: #fff;
+	font-size: 15px;
+	border-radius: 5px;
+	background: rgba(0,0,0,.8);
+	padding: 8px 12px;
+}
+/*msg end*/
