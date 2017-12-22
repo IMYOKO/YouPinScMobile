@@ -31,7 +31,14 @@
 	MsgPulgin.prototype = {
 		//初始化
 		init: function(){
-			this.createHtml();
+			//判断是否有提示
+			var hasMsg = $('.pop-msg-wrapper');
+			var len = hasMsg.length;
+			if(len>=1){
+				hasMsg.show();
+			}else{
+				this.createHtml();
+			}
 			this.hideHtml();
 		},
 		
