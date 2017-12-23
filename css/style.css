@@ -4,12 +4,23 @@
 .mt-15 {
 	margin-top: 15px !important;
 }
+.pb-48 {
+	padding-bottom: 48px !important;
+}
+.h4 {
+	height: 4px;
+}
+
+/**/
 .view-wrapper {
 	padding: 0 15px;
 }
 .login-box {
 	text-align: center;
 	padding: 40px 0 30px;
+}
+.input-row {
+	position: relative;
 }
 .input-row input {
 	width: 100%;
@@ -18,10 +29,34 @@
 	border-radius: 0;
 	border-bottom: 1px solid #e5e5e5;
 }
+.input-tips-01 {
+	width: 35px;
+	position: absolute;
+	line-height: 28px;
+	margin: 14px 0 6px;
+}
+.border-right {
+	border-right: 1px solid #e5e5e5;
+}
+.input-row input.phone {
+	text-indent: 45px;
+}
+.input-row .send-code {
+	width: 70px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	position: absolute;
+	right: 0;
+	top: 10px;
+	border-left: 1px solid #e5e5e5;
+}
 .login-btn,
-.registrated-btn {
+.registrated-btn,
+.registrated-next-btn {
 	width: 100%;
 	display: block;
+	text-align: center;
 	font-size: 15px;
 	padding: 15px 0;
 	border-radius: 5px;
@@ -30,14 +65,26 @@
 }
 .registrated-btn {
 	color: #e22c3a;
-	text-align: center;
 	background: none;
 	border: 1px solid #e22c3a;
 }
+.coed-img {
+	position: absolute;
+	right: 0;
+	top: 10px;
+}
+
 
 /*login*/
 .sumbit-box {
 	padding-top: 15px;
+}
+.bootm-img {
+	padding-top: 20px;
+	text-align: center;
+}
+.bootm-img img {
+	max-width: 100%;
 }
 
 /*msg star*/
@@ -60,3 +107,87 @@
 	padding: 8px 10px;
 }
 /*msg end*/
+
+/*index star*/
+.goods-infor {
+	padding: 16px;
+	border-bottom: 1px solid #e5e5e5;
+}
+.goods-infor h2 {
+	color: #333;
+	font-size: 16px;
+	line-height: 18px;
+	margin-bottom: 8px;
+}
+.goods-infor p {
+	color: #999;
+	line-height: 15px;
+	font-size: 14px;
+}
+.goods-infor p.tips {
+	margin-bottom: 12px;
+}
+.sell-infor {
+	color: #e22c3a;
+	margin-bottom: 2px;
+}
+.sell-infor .sell-price {
+	font-size: 24px;
+}
+.sell-infor .sell-price em {
+	font-size: 12px;
+}
+.sell-infor .sell-num {
+	color: #999;
+	font-size: 12px;
+	margin-top: 10px;
+}
+.goods-infor h4 {
+	color: #999;
+	font-size: 12px;
+	line-height: 13px;
+}
+
+/*温馨提示*/
+.sweet-tip {
+	padding: 13px 15px;
+	border-bottom: 1px solid #e5e5e5;
+	border-top: 1px solid #e5e5e5;
+}
+.sweet-tip p {
+	color: #999;
+	font-size: 14px;
+	line-height: 15px;
+}
+.goods-details {
+	padding: 10px 15px;
+	border-top: 1px solid #e5e5e5;
+}
+.goods-details p {
+	font-size: 13px;
+	margin-bottom: 5px;
+}
+.goods-details img {
+	text-align: center;
+	max-width: 100%;
+	height: auto;
+}
+/*购买*/
+.buy-wrapper {
+	width: 100%;
+	height: 48px;
+	line-height: 48px;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+}
+.buy-btn {
+	color: #fff;
+	height: 48px;
+	font-size: 15px;
+	line-height: 48px;
+	text-align: center;
+	display: block;
+	background: #e71727;
+}
+/*index end*/

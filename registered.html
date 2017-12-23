@@ -3,27 +3,29 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no">
-	<title>登录</title>
+	<title>注册</title>
 	<link rel="stylesheet" type="text/css" href="css/reset.css"/>
 	<link rel="stylesheet" type="text/css" href="css/style.css"/>
 </head>
 <body>
 <div class="view-wrapper login-wrapper">
-	<div class="login-box">
-		<img src="images/logo@2x.png" width="72" height="72"/>
-	</div>
 	<div class="login-form-wrapper">
 		<ul class="login-form-list">
 			<li class="input-row">
-				<input type="text" name="user" id="user" placeholder="用户名/手机号" />
+				<div class="input-tips-01 border-right">+86</div>
+				<input type="text" class="phone" name="phone" id="phone" placeholder="手机号" />
 			</li>
 			<li class="input-row">
-				<input type="password" name="password" id="password" placeholder="密码" />
+				<img src="images/code@2x.png" class="coed-img" alt="图片验证码" width="82" height="32" />
+				<input type="text" placeholder="请输入图文验证码" />
+			</li>
+			<li class="input-row">
+				<a href="javascript:;" class="send-code">发送</a>
+				<input type="number" placeholder="请输入短信验证码" />
 			</li>
 		</ul>
 		<div class="sumbit-box">
-			<input type="button" id="login-btn" class="login-btn" value="登录" onclick="login()" />
-			<a href="registered.html" class="registrated-btn mt-15">注册</a>
+			<a href="registered02.html" class="registrated-next-btn mt-15">下一步</a>
 		</div>
 	</div>
 	<div class="bootm-img">
@@ -35,20 +37,7 @@
 <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
 <script type="text/javascript" src="js/msg.js"></script>
 <script type="text/javascript">
-	//登录
-	function login(){
-		var userName = $('#user').val();
-		var passWord = $('#password').val();
-		if(userName==''){
-			$.msg({msg:'请输入用户名！'});
-			return false;
-		}
-		if(passWord==''){
-			$.msg({msg:'请输入密码！'});
-			return false;
-		}
-		//请求登录后台操作
-	}
+	
 </script>
 <!--js end-->
 </body>
