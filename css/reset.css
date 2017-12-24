@@ -61,7 +61,13 @@ input, img, select {
 	vertical-align: middle;
 	border: none;
 }
-input[type="button"], input[type="submit"], input[type="reset"] {
+input[type="text"],
+input[type="tel"],
+input[type="password"],
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+input[type="number"] {
 	-webkit-appearance: none;
 }
 sumbit {
