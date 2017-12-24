@@ -110,3 +110,12 @@ a, div, p, span, ul, li, i, img, input {
     flex-direction: column;
 }
 
+/*移除number箭头*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+    -webkit-appearance: none !important;
+    margin: 0; 
+}
+input[type="number"] {
+	-moz-appearance:textfield;
+}
