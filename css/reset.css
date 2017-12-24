@@ -79,6 +79,7 @@ a {
 	color: #666;
 	text-decoration: none;
 }
+
 /* 清除点击虚拟框 */
 a, div, p, span, ul, li, i, img, input {
 	outline: 0;

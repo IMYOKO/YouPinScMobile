@@ -7,7 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="css/reset.css"/>
 	<link rel="stylesheet" type="text/css" href="css/style.css"/>
 </head>
-<body>
+<body class="has-bg">
 <div class="content-view pb-48">
 	<div class="user-infor">
 		<a href="javascript:;" class="next-btn"><i class="ico-next"></i></a>
@@ -26,10 +26,10 @@
 			</div>
 			<div class="order-price-box">
 				<h3>旺木元农家土鸡蛋 一箱30个 包邮   </h3>
-				<div class="price">￥75.00</div>
-				<div class="add-count-wrapper">
+				<div class="price">￥<em id="price">75.00</em></div>
+				<div class="add-count-wrapper" id="add-count-wrapper">
 					<span class="sub"><img src="images/sub@2x.png" width="12" height="2" /></span>
-					<input type="text" name="num" id="num" value="0" />
+					<input type="number" name="num" id="num" value="1" />
 					<span class="add"><img src="images/add@2x.png" width="12" height="12" /></span>
 				</div>
 			</div>
@@ -40,7 +40,7 @@
 			<div class="list-item list-item-01">
 				支付方式：
 				<div class="pay-type float-right clearfix" id="pay-type">
-					<span data-value="online" class="active">线上支付</span><span data-value="offline">线下支付</span>
+					<a href="javascript:;" data-value="online" class="online">线上支付</a><span data-value="offline" class="active">线下支付</span>
 				</div>
 			</div>
 		</li>
@@ -51,17 +51,17 @@
 		</li>
 		<li>
 			<div class="list-item">
-				快递运费：<span>￥<em id="freight">0.00</em></span>
+				快递运费：<span>￥<em id="freight">4.00</em></span>
 			</div>
 		</li>
 		<li>
 			<div class="list-item">
-				价格合计：<span>￥<em id="total">0.00</em></span>
+				商品总价：<span>￥<em id="total">0.00</em></span>
 			</div>
 		</li>
 		<li>
 			<div class="list-item discount">
-				商家优惠：<span>￥<em id="discount">0.00</em></span>
+				商家优惠：<span>￥<em id="discount">2.20</em></span>
 			</div>
 		</li>
 		
@@ -70,13 +70,75 @@
 
 	<!--购买-->
 	<div class="buy-wrapper">
-		<a href="javascript:;" class="buy-btn">立即购买</a>
+		<a href="javascript:;" class="buy-btn order-btn">立即下单</a>
+		<div class="order-sumbit">
+			应付金额：<span>￥<em id="all-total">0.00</em></span>
+		</div>
 	</div>
 	<!--购买-->
 </div>
 
 <!--js star-->
 <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+<script type="text/javascript">
+	
+	//判断整数
+	function isInteger(obj) {
+		return obj%1 === 0
+	}
+	
+	//计算应付金额
+	function totalMoney(){
+		//价格
+		var price = parseFloat($('#price').html());
+		//数量
+		var num = parseFloat($('#num').val());
+		//运费
+		var freight = parseFloat($('#freight').html());
+		//优惠
+		var discount = parseFloat($('#discount').html());
+		
+		var total = price*num + freight - discount;
+		
+		$('#total').html(total.toFixed(2));
+		$('#all-total').html(total.toFixed(2));
+	}
+	totalMoney();
+	
+	//点击增加和减少
+	$("#add-count-wrapper>span").each(function(){
+		$(this).click(function(){
+			var index = $(this).index();
+			var count = parseFloat($('#num').val());
+			if(index==0){
+				count--;
+				if(count<=0) {
+					count = count + 1;
+				}
+				$('#num').val(count);
+			}else{
+				count++;
+				$('#num').val(count);
+			}
+			totalMoney();
+		})
+	})
+	
+	//输入数量
+	$('#num').keyup(function(){
+		//判断是否为正整数
+		var re = /^[1-9]+[0-9]*]*$/;
+		var nowNum = $('#num').val();
+		if(nowNum != ''){
+			if(!re.test(nowNum)){
+				$('#num').val('1');
+			}
+		}else {
+			$('#num').val('1');
+		}
+		totalMoney();
+	})
+</script>
 <!--js end-->
 </body>
 </html>
