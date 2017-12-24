@@ -9,6 +9,23 @@
 </head>
 <body>
 <div class="content-view pb-48">
+	
+	<!--下载提示 star-->
+	<div class="download-wrapper" id="download-wrapper">
+		<div class="download-content">
+			<div class="download-box clearfix">
+				<div class="close-btn" id="close-btn">
+					<img src="images/x@2x.png" width="11" height="11"/>
+				</div>
+				<div class="down-tips">
+					<img src="images/logoMin@2x.png" width="25" height="25"/>APP用户可以直接打开浏览器哦~
+				</div>
+				<a href="javascript:;" class="down-btn">下载</a>
+			</div>
+		</div>
+	</div>
+	<!--下载提示 end-->
+	
 	<div class="goods-wrapper">
 		<div class="goods-img-box">
 			<img src="images/img-01@2x.png" style="width: 100%; height: auto;"/>
@@ -43,6 +60,12 @@
 
 <!--js star-->
 <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+<script type="text/javascript">
+	//关闭下载
+	$('#close-btn').click(function(){
+		$('#download-wrapper').remove();
+	})
+</script>
 <!--js end-->
 </body>
 </html>

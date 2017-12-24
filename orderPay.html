@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no">
+	<title>线上支付</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+</head>
+<body class="has-bg">
+<div class="content-view pb-48">
+	<ul class="pay-list" id="pay-list">
+		<li>
+			<div class="pay-item">
+				<img src="images/zhifubao@2x.png" width="20" height="20"/>
+				<span>支付宝支付</span>
+				<em class="active"></em>
+			</div>
+		</li>
+		<li>
+			<div class="pay-item">
+				<img src="images/weixin@2x.png" width="20" height="20"/>
+				<span>微信支付</span>
+				<em></em>
+			</div>
+		</li>
+	</ul>
+	<!--购买-->
+	<div class="buy-wrapper">
+		<a href="orderSuccess.html" class="buy-btn order-btn">付款</a>
+		<div class="order-sumbit">
+			应付金额：<span>￥<em id="all-total">0.00</em></span>
+		</div>
+	</div>
+	<!--购买-->
+</div>
+
+<!--js star-->
+<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+<script type="text/javascript">
+	$('#pay-list li').each(function(){
+		$(this).click(function(){
+			$(this).find('em').addClass('active');
+			$(this).siblings().find('em').removeClass('active');
+		})
+	})
+</script>
+<!--js end-->
+</body>
+</html>

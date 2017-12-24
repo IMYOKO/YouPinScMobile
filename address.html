@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no">
+	<title>收货地址</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+</head>
+<body class="has-bg">
+<div class="content-view">
+	<ul class="address-list">
+		<li class="clearfix">
+			<div class="addr-item float-left">
+				<a href="javascript:;" class="addr-item-link">
+					<h2><span>张三</span>13049492341</h2>
+					<p>四川省成都市武侯区成科西路3号</p>
+				</a>
+			</div>
+			<div class="addr-operation">
+				<a href="javascript:;" class="add-addr"></a>
+				<a href="javascript:;" class="del-addr"></a>
+			</div>
+		</li>
+		<li class="clearfix">
+			<div class="addr-item float-left">
+				<a href="javascript:;" class="addr-item-link">
+					<h2><span>张三</span>13049492341</h2>
+					<p>四川省成都市武侯区成科西路3号</p>
+				</a>
+			</div>
+			<div class="addr-operation">
+				<a href="javascript:;" class="add-addr"></a>
+				<a href="javascript:;" class="del-addr"></a>
+			</div>
+		</li>
+		<li class="clearfix">
+			<div class="addr-item float-left">
+				<a href="javascript:;" class="addr-item-link">
+					<h2><span>张三</span>13049492341</h2>
+					<p>四川省成都市武侯区成科西路3号</p>
+				</a>
+			</div>
+			<div class="addr-operation">
+				<a href="javascript:;" class="add-addr"></a>
+				<a href="javascript:;" class="del-addr"></a>
+			</div>
+		</li>
+		<li class="clearfix">
+			<div class="addr-item float-left">
+				<a href="javascript:;" class="addr-item-link">
+					<h2><span>张三</span>13049492341</h2>
+					<p>四川省成都市武侯区成科西路3号</p>
+				</a>
+			</div>
+			<div class="addr-operation">
+				<a href="javascript:;" class="add-addr"></a>
+				<a href="javascript:;" class="del-addr"></a>
+			</div>
+		</li>
+		<li class="clearfix">
+			<div class="addr-item float-left">
+				<a href="javascript:;" class="addr-item-link">
+					<h2><span>张三</span>13049492341</h2>
+					<p>四川省成都市武侯区成科西路3号</p>
+				</a>
+			</div>
+			<div class="addr-operation">
+				<a href="javascript:;" class="add-addr"></a>
+				<a href="javascript:;" class="del-addr"></a>
+			</div>
+		</li>
+		<li class="clearfix">
+			<div class="addr-item float-left">
+				<a href="javascript:;" class="addr-item-link">
+					<h2><span>张三</span>13049492341</h2>
+					<p>四川省成都市武侯区成科西路3号</p>
+				</a>
+			</div>
+			<div class="addr-operation">
+				<a href="javascript:;" class="add-addr"></a>
+				<a href="javascript:;" class="del-addr"></a>
+			</div>
+		</li>
+	</ul>
+	<div class="add-addr-box">
+		<a href="addAddr.html">+添加收货地址</a>
+	</div>
+</div>
+
+<!--js star-->
+<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+<script type="text/javascript">
+	$('.addr-item-link').each(function(){
+		$(this).click(function(){
+			$(this).parent().parent().siblings().removeClass('active');
+			$(this).parent().parent().addClass('active');
+		})
+	})
+</script>
+<!--js end-->
+</body>
+</html>
