@@ -22,13 +22,13 @@
 			<span>所在地区：</span>
 			<div class="addr-choose clearfix">
 				<select class="province" id="province">
-					<option value="请选择">请选择</option>
+					<option value="0">请选择</option>
 				</select>
 				<select class="city" id="city">
-					<option value="请选择">请选择</option>
+					<option value="0">请选择</option>
 				</select>
 				<select class="district" id="district">
-					<option value="请选择">请选择</option>
+					<option value="0">请选择</option>
 				</select>
 			</div>
 		</li>
@@ -99,29 +99,35 @@
 		$('#province').append(provinceHtml);
 		$('#province').change(function(){
 			var province = $('#province').val();
-			var s = '';
+			var index = '';
 			for(var index_01 in cityData ){
 				if(cityData[index_01].value == province){
 					//市
-					s = index_01;
+					index = index_01;
 					cityHtml= '';
 					districtHtml = '';
-					$('#district').html('<option value="请选择">请选择</option>');
+					$('#district').html('<option value="0">请选择</option>');
 					for(var i=0; i<cityData[index_01].children.length; i++){
 						cityHtml += '<option value="'+ cityData[index_01].children[i].value +'">'+ cityData[index_01].children[i].text +'</option>';
 					}
-					cityHtml2 = '<option value="请选择">请选择</option>' + cityHtml;
+					cityHtml2 = '<option value="0">请选择</option>' + cityHtml;
 					$('#city').html(cityHtml2);
 					
 					$('#city').change(function(){
 						var city = $('#city').val();
-						for(var index_02 in cityData[s].children ){
-							if(cityData[s].children[index_02].value == city){
+						for(var index_02 in cityData[index].children ){
+							if(cityData[index].children[index_02].value == city){
 								//区
-								for(var i=0; i<cityData[s].children[index_02].children.length; i++){
-									districtHtml += '<option value="'+ cityData[s].children[index_02].children[i].value +'">'+ cityData[s].children[index_02].children[i].text +'</option>';
+								//假如有第三及
+								if(cityData[index].children[index_02].hasOwnProperty('children')){
+									for(var i=0; i<cityData[index].children[index_02].children.length; i++){
+										districtHtml += '<option value="'+ cityData[index].children[index_02].children[i].value +'">'+ cityData[index].children[index_02].children[i].text +'</option>';
+									}
+									$('#district').html(districtHtml);
+								}else{
+									$('#district').html('<option value="0"></option>');
 								}
-								$('#district').html(districtHtml);
+									
 							}
 						}
 					})
