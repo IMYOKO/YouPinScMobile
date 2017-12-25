@@ -12,42 +12,45 @@
 	<ul class="addAddr-list">
 		<li>
 			<span>收货人：</span>
-			<input type="text" name="" id="" placeholder="收货人姓名" />
+			<input type="text" name="user" id="user" placeholder="收货人姓名" />
 		</li>
 		<li>
 			<span>手机号：</span>
-			<input type="tel" name="" id="" placeholder="请输入手机号码" />
+			<input type="tel" name="phone" id="phone" placeholder="请输入手机号码" />
 		</li>
 		<li>
 			<span>所在地区：</span>
 			<div class="addr-choose clearfix">
-				<select class="province">
+				<select class="province" id="province">
 					<option value="请选择">请选择</option>
-					<option value="北京">北京</option>
 				</select>
-				<select class="city">
+				<select class="city" id="city">
 					<option value="请选择">请选择</option>
-					<option value="北京">北京</option>
 				</select>
-				<select class="district">
+				<select class="district" id="district">
 					<option value="请选择">请选择</option>
-					<option value="北京">北京</option>
 				</select>
 			</div>
 		</li>
 		<li>
 			<span>详细地址：</span>
-			<input type="text" name="" id="" placeholder="请输入详细地址" />
+			<input type="text" name="addr" id="addr" placeholder="请输入详细地址" />
 		</li>
 	</ul>
 	<div class="addAddr-box">
-		<a href="javascript:;">确认</a>
+		<a href="javascript:;" onclick="upData()">确认</a>
 	</div>
 </div>
 
 <!--js star-->
 <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+<script type="text/javascript" src="js/msg.js"></script>
+<script type="text/javascript" src="js/city.data.js"></script>
 <script type="text/javascript">
+	//正则判断手机号码
+    function phoneNum(num){
+        return /^0?1[3|4|5|7|8][0-9]\d{8}$/.test(num);
+    };
 	// 检测iOS版本大于等于6
 	function gtIOS6() {
 	    var userAgent = window.navigator.userAgent;
@@ -60,6 +63,73 @@
 			'paddingBottom':'8px'
 		})
 	}
+	
+	//提交
+	function upData(){
+		var userName = $('#user').val();
+		var phone = $('#phone').val();
+		var province = $('#province').find("option:selected").text();
+		var city = $('#city').find("option:selected").text();
+		var district = $('#district').find("option:selected").text();
+		if(userName==''){
+			$.msg({msg:'请输入收货人姓名！'});
+			return false;
+		}
+		if(userName==''){
+			$.msg({msg:'请输入手机号码！'});
+			return false;
+		}else{
+			if(!phoneNum(phone)) {
+				$.msg({msg:'手机号码不正确！'});
+				return false;
+			}
+		}
+		console.log(province,city,district);
+	}
+	function chooseAddr(){
+		var cityData = cityData3;
+		var provinceHtml = '';
+		var cityHtml = '';
+		var districtHtml = '';
+		
+		//省
+		for(var i=0; i<cityData.length; i++){
+			provinceHtml += '<option value="'+ cityData[i].value +'">'+ cityData[i].text +'</option>';
+		}
+		$('#province').append(provinceHtml);
+		$('#province').change(function(){
+			var province = $('#province').val();
+			var s = '';
+			for(var index_01 in cityData ){
+				if(cityData[index_01].value == province){
+					//市
+					s = index_01;
+					cityHtml= '';
+					districtHtml = '';
+					$('#district').html('<option value="请选择">请选择</option>');
+					for(var i=0; i<cityData[index_01].children.length; i++){
+						cityHtml += '<option value="'+ cityData[index_01].children[i].value +'">'+ cityData[index_01].children[i].text +'</option>';
+					}
+					cityHtml2 = '<option value="请选择">请选择</option>' + cityHtml;
+					$('#city').html(cityHtml2);
+					
+					$('#city').change(function(){
+						var city = $('#city').val();
+						for(var index_02 in cityData[s].children ){
+							if(cityData[s].children[index_02].value == city){
+								//区
+								for(var i=0; i<cityData[s].children[index_02].children.length; i++){
+									districtHtml += '<option value="'+ cityData[s].children[index_02].children[i].value +'">'+ cityData[s].children[index_02].children[i].text +'</option>';
+								}
+								$('#district').html(districtHtml);
+							}
+						}
+					})
+				}
+			}
+		})
+	}
+	chooseAddr();
 </script>
 <!--js end-->
 </body>
