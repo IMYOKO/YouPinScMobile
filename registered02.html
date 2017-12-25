@@ -12,14 +12,14 @@
 	<div class="login-form-wrapper">
 		<ul class="login-form-list">
 			<li class="input-row">
-				<input type="password" placeholder="请输入密码" />
+				<input type="password" id="password" placeholder="请输入密码" />
 			</li>
 			<li class="input-row">
-				<input type="password" placeholder="请再次输入密码" />
+				<input type="password" id="passwordAgain" placeholder="请再次输入密码" />
 			</li>
 		</ul>
 		<div class="sumbit-box">
-			<input type="button" class="login-btn" value="完成" />
+			<input type="button" class="login-btn" onclick="upData()" value="完成" />
 		</div>
 	</div>
 	<div class="bootm-img">
@@ -28,7 +28,7 @@
 </div>
 
 <!--注册成功 star-->
-<div class="pop-wrapper" style="display: block;">
+<div class="pop-wrapper" style="display: none;">
 	<div class="pop-content">
 		<div class="succ-box">
 			<div class="succ-img">
@@ -45,7 +45,23 @@
 <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
 <script type="text/javascript" src="js/msg.js"></script>
 <script type="text/javascript">
-	
+	function upData(){
+		var passWord = $('#password').val();
+		var passWordAgain = $('#passwordAgain').val();
+		if(passWord==""){
+			$.msg({msg:'密码不能为空！'});
+			return false;
+		}
+		if(passWordAgain==""){
+			$.msg({msg:'确认密码不能为空！'});
+			return false;
+		}
+		if(passWord!=passWordAgain){
+			$.msg({msg:'两次密码不一致！'});
+			return false;
+		}
+		//提交表单操作
+	}
 </script>
 <!--js end-->
 </body>

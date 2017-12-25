@@ -6,6 +6,7 @@
 	<title>首页</title>
 	<link rel="stylesheet" type="text/css" href="css/reset.css"/>
 	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
 </head>
 <body>
 <div class="content-view pb-48">
@@ -29,9 +30,23 @@
 	<!--下载提示 end-->
 	
 	<div class="goods-wrapper">
-		<div class="goods-img-box">
-			<img src="images/img-01@2x.png" style="width: 100%; height: auto;"/>
+		<div class="swiper-container">
+		    <div class="swiper-wrapper">
+			    <div class="swiper-slide">
+			      	<img src="images/img-01@2x.png" style="width: 100%; height: auto;"/>
+			    </div>
+			    <div class="swiper-slide">
+			      	<img src="images/bm3.jpg" style="width: 100%; height: auto;"/>
+			    </div>
+			    <div class="swiper-slide">
+			      	<img src="images/bm2.jpg" style="width: 100%; height: auto;"/>
+			    </div>
+		    </div>
+		    <div class="swiper-pagination"></div>
 		</div>
+		<!--<div class="goods-img-box">
+			<img src="images/img-01@2x.png" style="width: 100%; height: auto;"/>
+		</div>-->
 		<div class="goods-infor">
 			<h2>旺木元农家土鸡蛋 一箱30个 包邮</h2>
 			<p class="tips">味道鲜美,非常鲜美哦</p>
@@ -63,6 +78,13 @@
 </div>
 
 <!--js star-->
+<script type="text/javascript" src="js/swiper.min.js"></script>
+<script type="text/javascript">
+	var swiper = new Swiper('.swiper-container',{
+		speed: 500,
+		pagination: '.swiper-pagination'
+	});
+</script>
 <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
 <script type="text/javascript">
 	//关闭下载

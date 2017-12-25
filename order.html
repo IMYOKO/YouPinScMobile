@@ -40,7 +40,7 @@
 			<div class="list-item list-item-01">
 				支付方式：
 				<div class="pay-type float-right clearfix" id="pay-type">
-					<a href="orderPay.html" data-value="online" class="online">线上支付</a><span data-value="offline" class="active">线下支付</span>
+					<span data-value="online" class="active">线上支付</span><span data-value="offline">线下支付</span>
 				</div>
 			</div>
 		</li>
@@ -81,6 +81,14 @@
 <!--js star-->
 <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
 <script type="text/javascript">
+	//选择支付方式
+	$('#pay-type span').each(function(){
+		$(this).click(function(){
+			$(this).addClass('active');
+			$(this).siblings().removeClass('active');
+		})
+	})
+	
 	// 检测iOS版本大于等于6
 	function gtIOS6() {
 	    var userAgent = window.navigator.userAgent;

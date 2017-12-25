@@ -355,7 +355,6 @@
 	height: 34px;
 	line-height: 34px;
 }
-.pay-type a,
 .pay-type span {
 	color: #666;
 	display: block;
@@ -373,7 +372,7 @@
 	color: #e81929;
 	border: 1px solid #e81929;
 }
-.pay-type a {
+.pay-type span:first-child {
 	margin-left: 0;
 }
 .list-item >span {
@@ -661,6 +660,7 @@
 	position: fixed;
 	top: 0;
 	left: 0;
+	z-index: 10;
 }
 .top-01 {
 	padding: 15px 0;

@@ -42,6 +42,11 @@
 		if(userName==''){
 			$.msg({msg:'请输入用户名！'});
 			return false;
+		}else {
+			if(!phoneNum(userName)) {
+				$.msg({msg:'手机号码不正确！'});
+				return false;
+			}
 		}
 		if(passWord==''){
 			$.msg({msg:'请输入密码！'});
@@ -49,6 +54,10 @@
 		}
 		//请求登录后台操作
 	}
+	//正则判断手机号码
+    function phoneNum(num){
+        return /^0?1[3|4|5|7|8][0-9]\d{8}$/.test(num);
+    };
 </script>
 <!--js end-->
 </body>
