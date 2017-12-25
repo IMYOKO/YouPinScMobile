@@ -185,6 +185,11 @@
 	bottom: 0;
 	left: 0;
 }
+.midder-wrapper {
+	min-width: 320px;
+	max-width: 540px;
+	margin: 0 auto;
+}
 .buy-btn {
 	color: #fff;
 	height: 48px;
@@ -325,7 +330,7 @@
 	display: block;
 	font-size: 15px;
 	text-align: center;
-	padding: 4px 0;
+	padding: 7px 0;
 	border-radius: 0;
 	background: none;
 }
@@ -503,7 +508,7 @@
 	text-indent: 3px;
 	font-size: 15px;
 	background: none;
-	padding: 8px 0;
+	padding: 11px 0;
 	float: left;
 }
 @media only screen and (max-width: 320px) {
@@ -652,12 +657,14 @@
 
 /*下载提示*/
 .download-wrapper {
-	padding: 15px 0;
 	width: 100%;
-	background: rgba(0, 0, 0, .8);
 	position: fixed;
 	top: 0;
 	left: 0;
+}
+.top-01 {
+	padding: 15px 0;
+	background: rgba(0, 0, 0, .8);
 }
 .download-content {
 	padding: 0 15px;

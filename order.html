@@ -68,9 +68,11 @@
 
 	<!--购买-->
 	<div class="buy-wrapper">
-		<a href="javascript:;" class="buy-btn order-btn">立即下单</a>
-		<div class="order-sumbit">
-			应付金额：<span>￥<em id="all-total">0.00</em></span>
+		<div class="midder-wrapper">
+			<a href="javascript:;" class="buy-btn order-btn">立即下单</a>
+			<div class="order-sumbit">
+				应付金额：<span>￥<em id="all-total">0.00</em></span>
+			</div>
 		</div>
 	</div>
 	<!--购买-->
@@ -79,6 +81,19 @@
 <!--js star-->
 <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
 <script type="text/javascript">
+	// 检测iOS版本大于等于6
+	function gtIOS6() {
+	    var userAgent = window.navigator.userAgent;
+	    var ios = userAgent.match(/(iPad|iPhone|iPod)\s+OS\s([\d_\.]+)/);
+	    return ios && ios[2] && (parseInt(ios[2].replace(/_/g, '.'), 10) >= 6);
+	}
+	if (gtIOS6()) {
+		$('.add-count-wrapper input').css({
+			'paddingTop':'4px',
+			'paddingBottom':'4px'
+		})
+	}
+	
 	//判断整数
 	function isInteger(obj) {
 		return obj%1 === 0
