@@ -81,7 +81,7 @@ a {
 }
 
 /* 清除点击虚拟框 */
-a, div, p, span, ul, li, i, img, input {
+a, div, p, span, ul, li, i, img, input, select {
 	outline: 0;
 	text-decoration: none;
 	-webkit-tap-highlight-color: transparent;
